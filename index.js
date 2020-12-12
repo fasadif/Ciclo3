@@ -15,9 +15,8 @@ const morgan = require('morgan');
 app.use(morgan('dev'));
 
 //Levantar el servidor
-const port = 3000;
-//app.set('PORT', 3000); asi se pueen defiir variables para la app unicamente
-app.listen(port, ()=>{
+app.set('PORT', process.env.PORT || 3000); //asi se pueen defiir variables para la app unicamente
+app.listen(app.get('PORT'), ()=>{
     console.log('server UP');
 });
 
